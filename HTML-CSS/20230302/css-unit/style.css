@@ -1,0 +1,90 @@
+html {
+  font-size: 10px;
+}
+
+.px {
+  font-size: 20px;
+}
+.px .btn1 {
+  font-size: 20px;
+  padding: 4px 20px;
+  border-radius: 0.2em;
+}
+.px .btn2 {
+  font-size: 40px;
+  padding: 8px 40px;
+  border-radius: 0.2em;
+}
+.px .btn3 {
+  font-size: 80px;
+  padding: 16px 80px;
+  border-radius: 0.2em;
+}
+
+/* em: 부모 요소로부터 상속받은 요소의 글자 크기를 기준으로 하는 배수 단위 */
+/* .em의 부모 html 글자 크기인 10px 기준 */
+.em {
+  font-size: 2em;
+}
+
+/* 부모 요소 글자 크기(2em=20px) 기준 */
+.em .btn1,
+.em .btn2,
+.em .btn3 {
+  padding: 0.2em 1em;
+  border-radius: 0.2em;
+}
+.em .btn1 {
+  font-size: 1em;
+}
+.em .btn2 {
+  font-size: 2em;
+}
+.em .btn3 {
+  font-size: 4em;
+}
+
+/* 최상의 요소(<html>)의 글자 크기를 기준으로 하는 배수 단위 */
+/* <html>의 기본 폰트 사이즈는 16px, 여기서는 10px */
+.rem {
+  font-size: 2rem;
+}
+.rem .btn1,
+.rem .btn2,
+.rem .btn3 {
+  padding: 0.2em 1em;
+  border-radius: 0.2em;
+}
+.rem .btn1 {
+  font-size: 2rem;
+}
+.rem .btn2 {
+  font-size: 4rem;
+}
+.rem .btn3 {
+  font-size: 8rem;
+}
+
+/* 
+.btn1{
+
+  padding:0 40px;
+}
+
+.btn2{
+  padding:0 4rem;
+}
+
+.btn3, .btn4, .btn5{
+   padding:0 0.5em;
+}
+.btn3{
+   font-size: 8rem;
+}
+
+.btn4{
+  font-size: 4rem;
+}
+.btn5{
+  font-size: 2rem;
+} */
