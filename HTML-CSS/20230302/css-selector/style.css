@@ -1,0 +1,29 @@
+section,
+div {
+  border: 2px solid #ddd;
+  padding: 10px;
+}
+
+/* section 안에 모든 p */
+section p {
+  font-weight: bold;
+}
+
+/* section의 자식인 p만*/
+section > p {
+  color: royalblue;
+}
+
+section > div {
+  border: 3px dashed blue;
+}
+
+/* h1과 형제인 모든 p */
+h1 ~ p {
+  text-decoration: underline;
+}
+
+/* h1 바로 다음 p만 */
+h1 + p {
+  background: yellow;
+}
