@@ -1,0 +1,24 @@
+.ex1 span {
+  display: inline-block;
+}
+.ex2 span {
+  display: block;
+}
+
+@media (max-width: 1000px) {
+  .ex2 span {
+    display: inline;
+  }
+}
+p {
+  font-size: 60px;
+}
+
+/* 
+word-break
+normal: 영어에서 단어를 기준으로 줄바꿈
+break-all: 영어에서 한글자씩 줄바꿈
+keep-all: 한중일(CJK) 텍스트에서 단어를 기준으로 줄바꿈. 비 CJK 텍스트에서는 normal과 같다. */
+.ko {
+  word-break: keep-all;
+}
