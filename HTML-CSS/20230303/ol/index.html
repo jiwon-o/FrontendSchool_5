@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ol, dl태그</title>
+  </head>
+  <body>
+    <ol>
+      <li>물 550ml를 끓인다</li>
+      <li>면, 분말, 건더기 스프를 넣는다</li>
+      <li>4~5분 더 끓인다</li>
+    </ol>
+
+    <ol start="5" reversed>
+      <!-- 5 -->
+      <li>물 550ml를 끓인다</li>
+      <!-- 4 -->
+      <li>면, 분말, 건더기 스프를 넣는다</li>
+      <!-- 3 -->
+      <li>4~5분 더 끓인다</li>
+    </ol>
+
+    <ol type="a" start="2">
+      <!-- b -->
+      <li>물 550ml를 끓인다</li>
+      <!-- c -->
+      <li>면, 분말, 건더기 스프를 넣는다</li>
+      <!-- d -->
+      <li>4~5분 더 끓인다</li>
+    </ol>
+
+    <ol type="I">
+      <!-- III -->
+      <li value="3">first item</li>
+      <!-- 4 -->
+      <li type="1">second item</li>
+      <!-- V -->
+      <li>third item</li>
+      <!-- VI -->
+      <li>fourth item</li>
+      <!-- VII -->
+      <li>fifth item</li>
+    </ol>
+
+    <!-- Definition List(설명 목록) -->
+    <dl>
+      <div>
+        <dt>용어</dt>
+        <dd>설명</dd>
+        <dd>설명</dd>
+        <dd>설명</dd>
+      </div>
+      <div>
+        <dt>용어</dt>
+        <dt>용어</dt>
+        <dt>용어</dt>
+        <dd>설명</dd>
+      </div>
+    </dl>
+  </body>
+</html>
