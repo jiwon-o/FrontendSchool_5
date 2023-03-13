@@ -1,0 +1,25 @@
+div {
+  display: flex;
+  gap: 30px;
+}
+
+div h2,
+div p {
+  flex-grow: 1;
+}
+
+p {
+  background: #eee;
+}
+
+/* 단어가 끊겨서 줄바꿈이 될 수 있다 */
+[class$="break"] {
+  background: pink;
+  word-break: break-all;
+}
+
+/* 한중일 텍스트에서 단어를 끊지 않고 줄바꿈(영어에선 normal과 같음) */
+[class$="keep"] {
+  background: skyblue;
+  word-break: keep-all;
+}
