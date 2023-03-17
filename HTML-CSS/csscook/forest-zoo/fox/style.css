@@ -1,0 +1,48 @@
+/* Resets */
+h1,
+p {
+  margin: initial;
+}
+
+img {
+  vertical-align: top;
+}
+
+/* Layouts */
+.wrapper {
+  width: 500px;
+  margin: 100px auto;
+}
+
+/* Components */
+body {
+  background-image: url(images/bg.png);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.card-cover {
+  margin: 0 auto;
+  display: block;
+}
+
+.card-contents {
+  border-radius: 10px 10px 20px 20px;
+  background-color: #93572e;
+  color: white;
+  background-image: url(images/green.png);
+  background-repeat: repeat-x; /* 유지보수 */
+  padding: 64px 20px 20px 20px;
+  border-bottom: 10px solid #4a260b;
+  /* box-shadow를 쓰지 않는 이유: border은 공간을 차지하고 box-shadow는 공간을 차지하지 않는다. 따라서 다음 컨텐츠가 하나더 생겼을 때 border면 그 밑에 잘 생기고 box-shadow를 사용하면 겹칠 수 있어 border을 사용한다. */
+}
+
+.card-contents h1 {
+  margin-bottom: 10px;
+}
+
+.card-contents p {
+  color: antiquewhite;
+  margin-bottom: 1.2em;
+}
