@@ -24,9 +24,10 @@
         color: sandybrown;
       }
 
-      li:nth-child(3) {
-        color: royalblue;
-      }
+      /* 짝수 */
+      /* li:nth-child(even) {
+      text-decoration: line-through rosybrown;
+    } */
 
       /* 홀수 */
       /* li:nth-child(odd) {
@@ -36,19 +37,6 @@
       li:nth-child(2n + 1) {
         text-decoration: underline;
       }
-
-      /* 짝수 */
-      /* li:nth-child(even) {
-      text-decoration: line-through rosybrown;
-    } */
-
-      li:nth-child(2n) {
-        text-decoration: line-through rosybrown;
-      }
-
-      /* .last-child {
-      color: sandybrown;
-    } */
 
       /* div 자식 요소중에 3번째 */
       div :nth-child(3) {
@@ -64,8 +52,27 @@
         color: var(--main-color);
       }
 
-      p:only-of-type {
+      /* 띄어쓰기는 자손 선택자 
+      div p - div의 자손인 p
+     */
+      /* div 자손이면서 형제중에 유일한 타입의 태그 */
+      div :only-of-type {
         border: 3px solid sandybrown;
+      }
+
+      /* div이면서 형제중에 유일한 타입의 태그 */
+      div:only-of-type {
+        background: rgba(0, 0, 0, 0.1);
+      }
+
+      /* div 자손이면서 형제 중 3번째 */
+      div :nth-child(3) {
+        text-decoration: underline;
+      }
+
+      /* div이면서 형제중에 세번째 - 현재 html에 없음 */
+      div:nth-child(3) {
+        text-decoration: line-through;
       }
 
       li:not(:first-child) {
