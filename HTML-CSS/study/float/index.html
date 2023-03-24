@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float</title>
+    <style>
+      [class^="box"] {
+        width: 100px;
+        height: 100px;
+        background: rgb(141, 75, 246);
+        color: #fff;
+        line-height: 100px;
+        text-align: center;
+      }
+      [class^="box"]:first-child {
+        background: royalblue;
+      }
+      [class^="box"]:last-child {
+        background: salmon;
+      }
+      .container {
+        background: skyblue;
+        /* 방법1 */
+        /*    height:100px; */
+        /* 방법2 */
+        /*   overflow:hidden; */
+      }
+      /* 방법3 */
+      .container::after {
+        content: "";
+        display: block;
+        clear: left;
+      }
+      .box {
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      container
+      <div class="box">A</div>
+      <div class="box">B</div>
+      <div class="box">C</div>
+    </div>
+  </body>
+</html>
