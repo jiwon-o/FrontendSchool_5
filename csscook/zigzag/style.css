@@ -245,71 +245,6 @@ button {
   margin-bottom: 10px;
 }
 
-@media (max-width: 1180px) {
-  .l_wrapper {
-    margin: 0 50px;
-  }
-
-  .section {
-    padding: 50px 0;
-  }
-
-  .section_purple .section-header {
-    flex-direction: column;
-    align-items: start;
-    margin-bottom: 50px;
-  }
-
-  .section_purple .header-title {
-    padding: 0 0 22px 0;
-  }
-
-  .section_purple .header-description {
-    padding: 22px 0 0 0;
-  }
-
-  .section_purple .header-description::before {
-    content: " ";
-    top: 0;
-    left: 0;
-  }
-
-  .section-thumb {
-    flex-basis: 34%;
-  }
-
-  .section-description {
-    padding: 4%;
-  }
-
-  .section-thumb:hover {
-    transform: scale(1.1);
-  }
-}
-
-@media (max-width: 600px) {
-  .l_wrapper {
-    margin: 0 30px;
-  }
-
-  .section {
-    padding: 30px 0;
-  }
-
-  .section_purple .card,
-  .section_purple .card:nth-child(even) {
-    flex-direction: column;
-  }
-
-  .section_purple .section-thumb:hover {
-    transform: scale(1.05);
-  }
-
-  .section_purple .section-description {
-    padding: 5%;
-  }
-}
-
 /* pink section */
 .section_pink {
   background-color: var(--color-pink);
@@ -367,10 +302,6 @@ button {
   height: 100px;
 }
 
-.section_pink .tag-wrap {
-  margin-bottom: 24px;
-}
-
 .section_pink .description-title {
   font-size: 24px;
   font-weight: 700;
@@ -379,35 +310,49 @@ button {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
+}
+
+.section_pink .tag-wrap {
+  margin-bottom: 24px;
 }
 
 .section_pink .tag {
+  display: inline-block;
   font-size: 12px;
   background-color: var(--color-tag-bg);
   color: var(--color-purple-tag);
   padding: 4px;
   font-weight: 700;
   border-radius: 4px;
+  margin-bottom: 4px;
 }
+
 .section_pink .description-detail {
   font-size: 14px;
   color: var(--color-grey);
   line-height: 1.3em;
   min-height: 109px;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6;
 }
 
 .section_pink .description-more {
-  padding: 18px 24px 14px;
+  padding: 18px 24px 16px;
   position: relative;
   color: var(--color-grey);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: auto;
+}
+
+.section_pink .description-more::before {
+  content: "";
+  position: absolute;
+  width: calc(100% - 24px);
+  height: 4px;
+  top: 0;
+  left: 24px;
+  background-color: var(--color-grey-border);
 }
 
 .section_pink .description-more.soldout {
@@ -425,15 +370,103 @@ button {
   border: 5px solid var(--color-white);
 }
 
-.section_pink .description-more img:not(:first-child) {
+@media (max-width: 1180px) {
+  .l_wrapper {
+    margin: 0 50px;
+  }
+
+  .section {
+    padding: 50px 0;
+  }
+  .section-header {
+    margin-bottom: 50px;
+  }
+
+  .section_purple .section-header {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .section_purple .header-title {
+    padding: 0 0 22px 0;
+  }
+
+  .section_purple .header-description {
+    padding: 22px 0 0 0;
+  }
+
+  .section_purple .header-description::before {
+    content: "";
+    top: 0;
+    left: 0;
+  }
+
+  .section_purple .section-thumb {
+    flex-basis: 44%;
+  }
+
+  .section_purple .section-description {
+    padding: 4%;
+  }
+
+  .section_purple .section-thumb:hover {
+    transform: scale(1.1);
+  }
+
+  .section_pink .description-more .link-more span {
+    display: none;
+  }
 }
 
-.section_pink .description-more::before {
-  content: "";
-  position: absolute;
-  width: calc(100% - 24px);
-  height: 4px;
-  top: 0;
-  left: 24px;
-  background-color: var(--color-grey-border);
+@media (max-width: 768px) {
+  .l_wrapper {
+    margin: 0 30px;
+  }
+
+  .section {
+    padding: 30px 0;
+  }
+
+  .section_pink .section-header {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .section_pink .header-title {
+    padding: 0 0 22px 0;
+  }
+
+  .section-contents {
+    min-width: 380px;
+  }
+
+  .section_pink .section-contents {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section_purple .card,
+  .section_purple .card:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .section_purple .section-thumb:hover {
+    transform: scale(1.05);
+  }
+
+  .section_purple .section-description {
+    padding: 5%;
+  }
+
+  .section_pink .description-title {
+    min-height: 0;
+  }
+
+  .section_pink .description-detail {
+    min-height: 0;
+  }
+
+  .section_pink .description-more .link-more span {
+    display: inline-block;
+  }
 }
