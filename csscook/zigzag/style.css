@@ -17,7 +17,7 @@ ul {
   padding: 0;
 }
 
-* {
+body {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
@@ -51,8 +51,13 @@ img {
   max-width: 100%;
 }
 
+button {
+  font-family: inherit;
+}
+
 /* Layouts */
 .l_wrapper {
+  box-shadow: inset 0 0 10px red;
   max-width: 1080px;
   margin: 100px auto;
 }
@@ -74,13 +79,14 @@ body {
   padding-right: 22px;
 }
 
-.header-title .highlight {
+.header-title strong {
+  font-weight: 500;
   display: block;
   position: relative;
   width: max-content;
 }
 
-.header-title .highlight::after {
+.header-title strong::after {
   content: " ";
   position: absolute;
   top: 60%;
@@ -96,6 +102,7 @@ body {
   color: var(--color-main-light);
   line-height: 1.5em;
   padding-left: 100px;
+  max-width: 400px;
 }
 
 .header-description::before {
@@ -118,13 +125,14 @@ body {
   display: flex;
 }
 
-.section-list.reverse {
+.section-list:nth-child(even) {
   flex-direction: row-reverse;
 }
 
 .section-thumbnail {
   position: relative;
   flex-basis: 26%;
+  flex-shrink: 0;
   transition: all 0.2s ease;
 }
 
@@ -152,14 +160,14 @@ body {
 }
 
 .section-thumbnail img {
-  min-height: 100%;
-  aspect-ratio: 280 / 168;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
 .section-description {
-  flex-basis: 74%;
   padding: 24px;
+  flex-grow: 1;
   background-color: var(--color-white);
 }
 
@@ -193,14 +201,15 @@ body {
   margin-bottom: 10px;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1180px) {
   .l_wrapper {
-    margin: 100px;
+    margin: 50px;
   }
 
   .header {
     flex-direction: column;
     align-items: start;
+    margin-bottom: 50px;
   }
 
   .header-title {
@@ -218,12 +227,11 @@ body {
   }
 
   .section-thumbnail {
-    flex-basis: 40%;
+    flex-basis: 34%;
   }
 
   .section-description {
-    flex-basis: 60%;
-    padding: 5%;
+    padding: 4%;
   }
 
   .section-thumbnail:hover {
@@ -231,21 +239,16 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .l_wrapper {
-    margin: 100px 13%;
-    min-width: 403.75px;
   }
 
-  .section-list {
+  .section-list,
+  .section-list:nth-child(even) {
     flex-direction: column;
   }
 
-  .section-list.reverse {
-    flex-direction: column;
-  }
-
-  .section-description {
-    padding: 5%;
+  .section-thumbnail:hover {
+    transform: scale(1.05);
   }
 }
