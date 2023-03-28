@@ -345,7 +345,7 @@ body {
 }
 
 .section_pink .description-more {
-  padding: 14px 24px;
+  padding: 16px 24px;
   position: relative;
   color: var(--color-grey);
   display: flex;
@@ -428,8 +428,9 @@ body {
   }
 
   .section_pink .description-title {
+    min-height: 40px;
     font-size: 2vw;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
   }
 
   .section_pink .description-detail {
