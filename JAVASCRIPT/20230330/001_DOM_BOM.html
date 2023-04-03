@@ -8,15 +8,15 @@
   </head>
   <body>
     <script>
-      // DOM
+      // DOM(Document Object Model: window.document로 접근)
       document.write("hello");
 
-      // BOM
-      window.alert("hello"); //: 브라우저에 메세지 다이얼로그를 띄운다.
-      window.prompt("입력해!"); //: 브라우저에 사용자의 데이터를 입력받을 수 있는 입력 창을 띄운다.
-      window.confirm("확인!"); //: true 혹은 false 값을 반환하는 다이얼로그를 띄운다.
+      // BOM(Browser Object Model: window 객체로 접근)
+      window.alert("hello"); //: 브라우저에 메세지 다이얼로그 표시
+      window.prompt("입력해!"); //: 브라우저에 사용자의 데이터를 입력받을 수 있는 입력 창 표시
+      window.confirm("확인!"); //: true 혹은 false 값을 반환하는 다이얼로그 표시
 
-      console.log("10"); //: 콘솔창에 로그 메세지를 보여준다.
+      console.log("10"); //: 콘솔창에 로그 메세지 표시
 
       console.log("%chello world", "color:red;font-size:32px"); // %c: console.log 스타일링 서식문자
       console.log(
@@ -26,8 +26,8 @@
       );
       // https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
 
-      console.error("error"); //: 콘솔창에 에러 메시지를 보여준다.
-      console.warn("hello"); //: 콘솔창에 경고 메시지를 보여준다.
+      console.error("error"); //: 콘솔창에 에러 메시지를 표시
+      console.warn("hello"); //: 콘솔창에 경고 메시지를 표시
 
       let data = {
         a: 10,
@@ -35,16 +35,16 @@
         c: 30,
       };
       let data2 = [10, 20, 30];
-      console.table(data); //: 콘솔창에 데이터를 테이블 형태로 제공한다.
+      console.table(data); //: 콘솔창에 데이터를 테이블 형태로 제공
       console.table(data2);
 
-      console.dir(data);
+      console.dir(data); //: 객체 속성을 인터랙티브한(여닫는 삼각형) 목록으로 표시
       console.dir(data2);
 
       // 자주 사용 X
-      console.info("hello world");
+      console.info("hello world"); //: 콘솔에 정보 메시지 출력
 
-      // 자주 사용 X, 한번 사용할 때 중요하게 사용되는 것
+      // 자주 사용하진 않지만 한번 사용할 때 중요하게 사용
       console.group("위니브");
 
       console.group("경영지원");
