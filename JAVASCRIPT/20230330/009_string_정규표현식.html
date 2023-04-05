@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>String, 정규포현식, replace</title>
+    <title>String - 정규표현식</title>
   </head>
   <body>
     <script>
@@ -22,7 +22,7 @@
       console.log(txt.indexOf("Z")); // 없는 값은 -1
       console.log(txt.search("Z")); // -1
 
-      // 정규포현식
+      // 정규표현식
       let regExp = /CD/;
       console.log(txt.search(regExp)); // 2
 
@@ -36,7 +36,7 @@
       // replace
       console.log(txt.replace("ABC", "hello")); // helloDEFGHIJK
       console.log(txt2.replace(regExp2, "h")); // abcdehellabcde
-      // abcdehelloabcde로 만들려면 어떻게 해야할까?
+      // abcdehelloabcde로 만들려면 어떻게 해야할까? : toLowerCase()를 사용하자
 
       // 실무 적용
       // JavaScript Markdown Parser
