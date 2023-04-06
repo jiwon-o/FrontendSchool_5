@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      let x = 10;
+      let y = 20;
+
+      x = x + 10;
+    </script>
+    <script>
+      let x = 100; // 재정의를 허락하지 않는다.(다른 block scope에서는 재정의 가능)
+
+      console.log(x);
+      console.log(y);
+    </script>
+  </body>
+</html>
