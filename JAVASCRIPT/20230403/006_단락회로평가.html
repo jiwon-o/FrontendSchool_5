@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // 단락회로평가
+      // true : 1
+      // false : 0
+      // and(&&) : 곱
+      // or(||) : 합
+      // not(!) : 부정
+
+      console.log(!""); // true
+      console.log(!" "); // false
+      console.log(!"false"); // false (string은 true이므로)
+      console.log(!"0"); // false
+
+      console.log(!false); // true
+      console.log(!0); // true
+      console.log(!NaN); // true
+
+      console.log("abc" / 2); // NaN
+
+      // !!: true인지 false인지 판별하기 위해 사용
+      console.log(!!NaN); // false
+      console.log(!!undefined); // false
+      console.log(!!null); // false
+      console.log(!!" "); // true
+
+      // 논리 연산(||): 앞이 true이면 뒤를 검사하지 않음
+      let username = "";
+      username = username || "무명";
+      console.log(username); // "무명"
+
+      let username2 = "이호준";
+      username2 = username2 || "무명";
+      console.log(username2); // "이호준"
+    </script>
+  </body>
+</html>
