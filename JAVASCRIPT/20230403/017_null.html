@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      let value1; // undefined
+
+      // 존재하지만 값이나 자료형이 존재하지 않는 foo
+      var value2 = null;
+      console.log(value2); //null
+
+      let 반점수 = [10, 20, 30, null, 40, 50];
+      let 반평균 = 0;
+      for (const i of 반점수) {
+        반평균 += i;
+      }
+      console.log(반평균 / 반점수.length); // 25
+
+      반점수 = [10, 20, 30, undefined, 40, 50];
+      반평균 = 0;
+      for (const i of 반점수) {
+        반평균 += i;
+      }
+      console.log(반평균 / 반점수.length); // NaN
+    </script>
+  </body>
+</html>
