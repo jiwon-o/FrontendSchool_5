@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // 할당연산
+      let x = 10;
+      x = x + 10;
+      x += 10;
+
+      // 단항연산
+      console.log(-(-2)); // 2
+      console.log(+-2); // -2
+      console.log(+(+2)); // 2
+      console.log(+(+"2")); // 2
+
+      // 증감연산
+      let num = 3;
+      console.log(++num); // 4
+      console.log(--num); // 3
+      console.log(num++); // 3
+      console.log(num--); // 4
+
+      // 둘은 결과가 같다(실행 순서 참고)
+      for (let i = 0; i < 10; i++) {
+        console.log(i);
+      }
+      for (let i = 0; i < 10; ++i) {
+        console.log(i);
+      }
+    </script>
+  </body>
+</html>
