@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      /* https://en.wikipedia.org/wiki/IEEE_754 Because 'Not a Number' is not a number, and is not equal to anything, including Not a Number. */
+
+      console.log(typeof NaN); // number
+      console.log(NaN === NaN); // false ('숫자가 아님'은 '숫자가 아님'과 동일한가? No!)
+      console.log(false === false); // true
+      console.log("---");
+      /////////////////////
+
+      console.log(0 / 0); // NaN
+      console.log(10 / 0); // Infinity
+      console.log("hello world" - 100); // NaN
+      console.log("hello world" / 100); // NaN
+      console.log("hello world" * 100); // NaN
+      console.log("2" * 10); // 20
+      console.log("---");
+
+      // 암기
+      console.log(NaN == NaN); // false
+      console.log(NaN === NaN); // false
+      console.log("---");
+
+      console.log(isNaN(undefined)); // true
+      console.log(isNaN(null)); // false (왜? Number(null)은 0이므로) ***
+      console.log(isNaN(NaN)); // true
+      console.log("---");
+
+      // ES6에서 추가 도입(암기)
+      console.log(Number.isNaN(undefined)); // false
+      console.log(Number.isNaN(null)); // false
+      console.log(Number.isNaN(NaN)); // true
+
+      /*
+      // https://www.designcise.com/web/tutorial/what-is-the-difference-between-isnan-and-number-isnan-in-javascript
+
+      x	            Number(x)	isNaN(x)
+      undefined	    NaN	        true
+      {}	            NaN	        true
+      'foo'	        NaN	        true
+      new Date('')	NaN	        true
+      new Number(0/0)	NaN	        true
+
+
+      x               typeof x === 'number'   Number.isNaN(x)
+      undefined	    false	                false
+      {}	            false	                false
+      'foo'	        false	                false
+      new Date('')	false	                false
+      new Number(0/0)	false	                false
+      */
+    </script>
+  </body>
+</html>
