@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      .canvas {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+      }
+
+      .green {
+        background-color: green;
+      }
+      .red {
+        background-color: red;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="canvas green"></div>
+    <ul>
+      <li>
+        <button type="button" class="btn-red">빨강</button>
+      </li>
+      <li>
+        <button type="button" class="btn-yellow">노랑</button>
+      </li>
+      <li>
+        <button type="button" class="btn-green">초록</button>
+      </li>
+    </ul>
+    <script>
+      const canvas = document.querySelector(".canvas");
+      const btns = document.querySelectorAll("[class|=btn]");
+
+      btns.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          // canvas.className = "canvas";
+          // canvas.setAttribute("class", "canvas");
+          canvas.classList.remove("green", "yellow", "red");
+          // if (item.classList.contains("btn-red")) {
+          if (e.target.className.includes("red")) {
+            canvas.classList.add("red");
+          } else if (e.target.className.includes("yellow")) {
+            canvas.classList.add("yellow");
+          } else {
+            canvas.classList.add("green");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
