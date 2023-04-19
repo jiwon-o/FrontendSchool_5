@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <body>
+      <ul></ul>
+      <button>Make me MORE!</button>
+
+      <script>
+        const elUl = document.querySelector("ul");
+        const btn = document.querySelector("button");
+
+        btn.addEventListener("click", () => {
+          for (let i = 0; i < 5; i++) {
+            const elLi = document.createElement("li");
+            const deleteBtn = document.createElement("button");
+            const btnTxt = (document.createTextNode = "버튼");
+            elLi.textContent = "삭제하기";
+            elLi.style.paddingBottom = `10px`;
+            deleteBtn.setAttribute("type", "button");
+            deleteBtn.append(btnTxt);
+            elLi.append(deleteBtn);
+            elUl.append(elLi);
+
+            deleteBtn.addEventListener("click", (e) => {
+              elLi.remove();
+            });
+          }
+        });
+      </script>
+    </body>
+  </body>
+</html>
