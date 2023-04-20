@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      :root {
+        --main-bgColor: aquamarine;
+        --main-txtColor: black;
+      }
+      body {
+        background-color: var(--main-bgColor);
+        margin: 0;
+        padding: 0;
+        font-size: 24px;
+      }
+      .wrapper {
+        text-align: center;
+        background-color: #fff;
+        padding: 20px;
+      }
+
+      .picker {
+        display: inline-block;
+      }
+
+      .picker + .picker {
+        margin-left: 30px;
+      }
+
+      main {
+        color: var(--main-txtColor);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="wrapper">
+      <article class="picker">
+        <label for="bg">배경색 : </label>
+        <input type="color" id="bg" class="inp-picker" data-id="bgColor" />
+      </article>
+      <article class="picker">
+        <label for="txt">글씨색 : </label>
+        <input type="color" id="txt" class="inp-picker" data-id="txtColor" />
+      </article>
+    </section>
+
+    <main>
+      <h1>#000000</h1>
+    </main>
+
+    <script>
+      const inpPicker = document.querySelectorAll(".inp-picker");
+      const root = document.querySelector(":root");
+      const txtColor = document.querySelector("h1");
+
+      inpPicker.forEach((item) => {
+        item.addEventListener("input", (e) => {
+          const name = `--main-${item.dataset.id}`;
+          root.style.setProperty(name, item.value);
+          if (item.dataset.id === "txtColor") {
+            txtColor.innerHTML = item.value;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
