@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memo</title>
+    <style>
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      input {
+        display: block;
+        width: 300px;
+        height: 30px;
+        margin-bottom: 10px;
+      }
+
+      textarea {
+        display: block;
+        width: 300px;
+        height: 300px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        display: block;
+        width: 306px;
+        height: 30px;
+        margin-bottom: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <input type="text" name="" id="title" />
+        <textarea name="" id="content" cols="30" rows="10"></textarea>
+        <button type="button">메모</button>
+      </section>
+      <section id="display">
+        <!-- <p>1</p>
+        <h1>제목</h1>
+        <p>내용</p>
+        <button type="button">삭제</button> -->
+      </section>
+    </main>
+    <script>
+      "use strict";
+
+      const memoTitle = document.getElementById("title");
+      const memoContent = document.getElementById("content");
+      const saveBtn = document.querySelector("button");
+
+      let memos = JSON.parse(localStorage.getItem("memo-list"));
+
+      function showMemo() {
+        const memoList = document.getElementById("display");
+        memoList.innerHTML = "";
+        if (memos) {
+          memos.forEach((memo, id) => {
+            const saveTitle = document.createElement("h2");
+            const saveContent = document.createElement("p");
+            const saveId = document.createElement("p");
+            const editMemoBtn = document.createElement("button");
+            const deleteMemoBtn = document.createElement("button");
+
+            saveId.textContent = id + 1;
+            saveTitle.textContent = memo.title;
+            saveContent.textContent = memo.content;
+            editMemoBtn.textContent = "수정";
+            editMemoBtn.setAttribute(
+              "onclick",
+              `editMemo(${id}, "${memo.title}", "${memo.content}")`
+            );
+            deleteMemoBtn.textContent = "삭제";
+            deleteMemoBtn.setAttribute("onclick", `deleteMemo(${id})`);
+
+            memoList.append(saveId);
+            memoList.append(saveTitle);
+            memoList.append(saveContent);
+            memoList.append(editMemoBtn);
+            memoList.append(deleteMemoBtn);
+          });
+        }
+      }
+      showMemo();
+
+      let editId;
+      let isEditedMemo = false;
+      function editMemo(memoId, title, content) {
+        editId = memoId;
+        isEditedMemo = true;
+        memoTitle.value = title;
+        memoContent.value = content;
+        memoTitle.focus();
+        saveBtn.textContent = "수정";
+      }
+
+      function deleteMemo(deleteId) {
+        memos.splice(deleteId, 1);
+        isEditedMemo = false;
+        saveBtn.textContent = "메모";
+        localStorage.setItem("memo-list", JSON.stringify(memos));
+        showMemo();
+      }
+
+      saveBtn.addEventListener("click", () => {
+        let userTitle = memoTitle.value.trim();
+        let userContent = memoContent.value;
+        let memoInfo;
+
+        if (userTitle) {
+          if (!isEditedMemo) {
+            if (!memos) {
+              memos = [];
+            }
+
+            memoInfo = { title: userTitle, content: userContent };
+            memos.push(memoInfo);
+          } else {
+            isEditedMemo = false;
+            saveBtn.textContent = "메모";
+            memos[editId].title = userTitle;
+            memos[editId].content = userContent;
+          }
+          memoTitle.value = "";
+          memoContent.value = "";
+        } else {
+          memoTitle.focus();
+        }
+
+        localStorage.setItem("memo-list", JSON.stringify(memos));
+        showMemo();
+      });
+    </script>
+  </body>
+</html>
