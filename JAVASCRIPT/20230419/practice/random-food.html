@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      const FoodPicker = function (foodNames) {
+        this.name = foodNames;
+        this.sayMenu = () => {
+          console.log(
+            `오늘의 메뉴는 ${
+              this.name[Math.floor(Math.random() * this.name.length)]
+            }입니다.`
+          );
+        };
+      };
+
+      let food = new FoodPicker([
+        "짜장면",
+        "청국장",
+        "김치찌게",
+        "짬뽕",
+        "된장찌게",
+      ]);
+      console.log(food.sayMenu());
+    </script>
+  </body>
+</html>
