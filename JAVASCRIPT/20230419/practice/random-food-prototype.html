@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // const FoodPicker = function (foodNames) {
+      //   this.name = foodNames;
+      //   // this.sayMenu = () => {
+      //   //   console.log(
+      //   //     `오늘의 메뉴는 ${
+      //   //       this.name[Math.floor(Math.random() * this.name.length)]
+      //   //     }입니다.`
+      //   //   );
+      //   // };
+      // };
+
+      // FoodPicker.prototype.sayMenu = function () {
+      //   console.log(
+      //     `오늘의 메뉴는 ${
+      //       this.name[Math.floor(Math.random() * this.name.length)]
+      //     }입니다.`
+      //   );
+      // };
+
+      // FoodPicker.prototype.sayMenu2 = function () {
+      //   console.log(this.sayMenu());
+      // };
+
+      // let food = new FoodPicker([
+      //   "짜장면",
+      //   "청국장",
+      //   "김치찌게",
+      //   "짬뽕",
+      //   "된장찌게",
+      // ]);
+      // food.sayMenu();
+      // food.sayMenu2();
+
+      // console.log(food);
+      // console.log();
+
+      // function Parent() {
+      //   this.name = "재현";
+      // }
+      // Parent.prototype.rename = function (name) {
+      //   this.name = name;
+      // };
+      // Parent.prototype.sayName = function () {
+      //   console.log(this.name);
+      // };
+
+      // function Child() {
+      //   Parent.call(this);
+      //   console.log(this);
+      // }
+
+      // Child.prototype = Object.create(Parent.prototype);
+      // Child.prototype.canWalk = function () {
+      //   console.log("now i can walk!!");
+      // };
+
+      // const parent = new Parent();
+      // const child = new Child();
+
+      class Jiwon {
+        constructor(name, age, project, rank) {
+          this.name = name;
+          this.age = age;
+          this.project = project;
+          this.rank = "bronze";
+        }
+
+        studying() {
+          this.project++;
+          console.log(
+            this.project >= 10
+              ? (this.rank = "master")
+              : this.project >= 5
+              ? "gold"
+              : "bronze"
+          );
+        }
+      }
+
+      const jiwon = new Jiwon("jiwon", 27, 0);
+      jiwon.studying();
+      jiwon.studying();
+      jiwon.studying();
+      jiwon.studying();
+      jiwon.studying();
+      jiwon.studying();
+      jiwon.studying();
+    </script>
+  </body>
+</html>
