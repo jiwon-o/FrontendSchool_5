@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      class Sausage {
+        constructor(ingred1, ingred2) {
+          this.ingred1 = ingred1;
+          this.ingred2 = ingred2;
+        }
+
+        taste() {
+          console.log(`${this.ingred1}와 ${this.ingred2} 맛이 난다!`);
+        }
+      }
+
+      class FiresSausage extends Sausage {
+        constructor(ingred1, ingred2, ingred3) {
+          super(ingred1, ingred2);
+          this.ingred3 = ingred3;
+        }
+
+        // 오버로딩(자바스크립트에는 없다.)
+        // taste(ingred1) {
+        //   console.log(
+        //     `${this.ingred1}와 ${this.ingred2}와 ${this.ingred3} 맛과 불맛이 난다!`
+        //   );
+        // }
+
+        // taste(ingred1, ingred2) {
+        //   console.log(
+        //     `${this.ingred1}와 ${this.ingred2}와 ${this.ingred3} 맛과 불맛이 난다!`
+        //   );
+        // }
+
+        // taste(ingred1, ingred2, ingred3) {
+        //   console.log(
+        //     `${this.ingred1}와 ${this.ingred2}와 ${this.ingred3} 맛과 불맛이 난다!`
+        //   );
+        // }
+
+        // 오버라이딩
+        taste() {
+          console.log(
+            `${this.ingred1}와 ${this.ingred2}와 ${this.ingred3} 맛과 불맛이 난다!`
+          );
+        }
+      }
+
+      const fireSausage = new FiresSausage("소고기", "파", "불");
+      console.log(fireSausage.taste());
+    </script>
+  </body>
+</html>
